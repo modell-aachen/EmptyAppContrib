@@ -1,0 +1,26 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1328628428" format="1.1" reprev="9" version="9"}%
+<br /> <form action="/bin/save/WorkflowManagement/VerbesserungsvorschlagAUTOINC000" method="post" name="Verbesserungsvorschlag"> <input type="hidden" name="formtemplate" value="VerbesserungsvorschlagForm"> <input type="hidden" name="templatetopic" value="VerbesserungsvorschlagTemplate"> <input type="hidden" name="action_quietsave" value="1"> %BUTTON{"Verbesserungsvorschlag einreichen" type="submit"}%%CLEAR% </form>
+
+---
+
+---+ Meine Verbesserungsvorschläge
+%TABPANE% 
+ %TAB{"Anträge im Eingabestatus"}% 
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%" topic="Verbesserungsvorschlag*" regex="on" excludetopic="VerbesserungsvorschlagVerwaltung%SEARCH{"META:WORKFLOW{name=." web="%WEB%" topic="Verbesserungsvorschlag*" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  format=",$topic" }%" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Standort * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Standort) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.EINGABE" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on" format="| [[$web.$topic][$topic]]  |  $formfield(Standort) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+%TAB{"Vorschläge in Prüfung"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.UEBERPRUEFUNG" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Standort * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Standort) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%TAB{"Geprüfte Vorschläge"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.BEARBEITET" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Standort * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Standort) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%TAB{"Alle Vorschläge"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Standort * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Standort) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%ENDTABPANE% 
+---
+
+%BUTTON{"Verbesserungsvorschläge verwalten" href="%SCRIPTURL{view}%/WorkflowManagement/VerbesserungsvorschlagVerwaltung"}%%CLEAR%
+
+%META:WORKFLOWHISTORY{value="<br>Forked to [[WorkflowManagement.WorkflowManagement.BedarfsmeldungTalk]] by Main.DstAdmin at 14 Dec 2010 - 11:56"}%

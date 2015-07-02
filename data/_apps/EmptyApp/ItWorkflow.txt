@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1352889221" format="1.1" reprev="3" version="3"}%
+---++ States
+%EDITTABLE{""}%
+| *State* | *Allow Edit* | *Allow Fork* | *Message* | *State Group* | *View Template* | *Allow Comment* | *Ist Diskussion* | *Discussion Label* |
+| EINGABE | AllUserGroup | nobody | Bitte ausfüllen | IT | Entwurf | AllUserGroup | | Draft |
+| WARTENAUFGF | MermetFrank,CorneliusFelix | nobody | Freigabe durch GF | IT | Entwurf | MermetFrank,CorneliusFelix | | Discussion |
+| WARTENAUFIT | MermetFrank,KleinboeltingAnja,LenicMandy, AllUserGroup | nobody | Freigabe durch IT | IT | Entwurf | MermetFrank,KleinboeltingAnja,LenicMandy, AllUserGroup | | Discussion |
+| ABGESCHLOSSEN | CorneliusFelix,KleinboeltingAnja,LenicMandy, AllUserGroup | nobody | Benutzeranlage abgeschlossen | IT | Freigegeben | CorneliusFelix,KleinboeltingAnja,LenicMandy, AllUserGroup | | Discussion |
+ 
+---++ Transitions
+%EDITTABLE{""}%
+| *State* | *Action* | *Next State* | *Allowed* | *Form* | *Notify* | *Attribute* |
+| EINGABE  | Benutzeranlage beantragen | WARTENAUFGF  | AllUserGroup | | CorneliusFelix,MermetFrank  |  |
+| WARTENAUFGF  | Weiterleiten an IT | WARTENAUFIT  | MermetFrank,CorneliusFelix | | DembskiDaniel |  |
+| WARTENAUFIT  | Benutzeranlage abschließen | ABGESCHLOSSEN  | CorneliusFelix | | %META{"formfield" name="Antragsteller"}% |  |
+
+   * Local WORKFLOW = 
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Local NOWYSIWYG = 1

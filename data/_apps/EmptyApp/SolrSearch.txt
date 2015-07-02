@@ -1,0 +1,5 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1294670091" format="1.1" version="7"}%
+%META:TOPICPARENT{name="SolrPlugin"}%
+<!--
+   * Set VIEW_TEMPLATE = SolrSearchView
+-->

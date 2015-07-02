@@ -1,0 +1,24 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1352887449" format="1.1" reprev="3" version="4"}%
+---++ States
+%EDITTABLE{""}%
+| *State* | *Allow Edit* | *Allow Fork* | *Message* | *State Group* | *View Template* | *Allow Comment* | *Ist Diskussion* | *Discussion Label* |
+| EINGABE | dst_mitarbeiter_group | nobody | Bitte geben Sie Ihre Bedarfsmeldung ein | Fahrantrag | Entwurf | dst_mitarbeiter_group | | Draft |
+| WARTENAUF_TEAMLEITER | dst_teamleiter | nobody | Freigabe durch den Teamleiter erforderlich. | Fahrantrag | Entwurf | dst_teamleiter | | Discussion |
+| FREIGEGEBEN | dst_einkauf | nobody | Fuhrparkleiter hat alle nötigen Informationen. | Fahrantrag | Freigegeben | dst_einkauf | | Discussion |
+| ABGELEHNT | nobody | nobody | Bedarfsanmeldung abgelehnt. | Fahrantrag | Entwurf | nobody | | Discussion |
+ 
+---++ Transitions
+%EDITTABLE{""}%
+| *State* | *Action* | *Next State* | *Allowed* | *Form* | *Notify* | *Attribute* |
+| EINGABE  | Um Freigabe bitten | WARTENAUF_TEAMLEITER  | dst_mitarbeiter_group | | |  |
+| WARTENAUF_TEAMLEITER  | Freigabe - weiter an Fuhrpark | FREIGABE  | dst_teamleiter | | |  |
+| WARTENAUF_TEAMLEITER  | Fahrantrag ablehnen | ABGELEHNT  | dst_teamleiter | | %META{"formfield" name="Antragsteller"}% |  |
+
+   * Local WORKFLOW = 
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Local NOWYSIWYG = 1
+
+%META:WORKFLOWMAILINGLIST{value="Main.DstTeamleiter"}%
+%META:WORKFLOWHISTORY{value="<br>WARTENAUF_TEAMLEITER -- 09 Dec 2010 - 08:48<br>WARTENAUF_BUDGET -- 09 Dec 2010 - 11:02"}%
+%META:WORKFLOW{name="WARTENAUF_BUDGET" LASTPROCESSOR_WARTENAUF_BUDGET="Main.DstTeamleiter" LASTPROCESSOR_WARTENAUF_TEAMLEITER="Main.DstTeamleiter" LASTTIME_WARTENAUF_BUDGET="09 Dec 2010 - 11:02" LASTTIME_WARTENAUF_TEAMLEITER="09 Dec 2010 - 08:48" LASTVERSION_WARTENAUF_BUDGET="6" LASTVERSION_WARTENAUF_TEAMLEITER="5"}%
+%META:WORKFLOWNEXTUSER{value="DstBudget"}%

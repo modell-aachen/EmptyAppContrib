@@ -1,0 +1,23 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1334573500" format="1.1" reprev="1" version="1"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| Antragsteller | text | | %WIKINAME% | | |
+| Bestelldatum | date | | %DATE% | | |
+| Freigabedatum | date | | | | |
+| Kategorie | select | | 0,1,2,3,4,5,6 | | |
+| Standort | checkbox+multi | | Zentrale, GZK, GZM, GZD, GZB, Arztnetz | | |
+| Standort_Zuweisung | textarea | 100x6 | | | |
+| Hauptzuordnung | select | | 1,2,3,4,5,6,7,8,9,10,11,12,13,14 | | |
+| Unterzuordnung | select | | 1,2,3,4,5 | | |
+| Kostenzuordnung | select | | A,B,C,D,E | | |
+| Benennung | textarea | | | | |
+| Begruendung | textarea | | | | |
+| ISB | radio | | Ja - durch Besteller, Empfohlen - durch GF, Nein - Begründung | | |
+| ISB_Begruendung | textarea | | | | |
+| Lieferant | text | | | | |
+| SpezielleAnforderungen | textarea | | | | |
+| Rahmenvertrag_Vertragsdatum | date | | | | |
+| Rahmenvertrag_Gueltigkeit | date | | | | |
+| Ausschreibung | select | | nicht durchgeführt, durchgeführt | | |
+| Gesellschafterbeschluss | select | | nicht benötigt, vorhanden | | |
+| Status | text | | | | |
+| Kommentar | textarea | 150x4 | | | |

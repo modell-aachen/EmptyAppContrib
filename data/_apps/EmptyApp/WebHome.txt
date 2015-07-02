@@ -1,0 +1,8 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1396961519" format="1.1" reprev="5" version="2"}%
+---+!! %MAKETEXT{"Welcome to the [_1] web" args="<nop>%WEB%"}%
+
+*Workflow Übersicht:*
+   * [[%WEB%.Beschaffungsantrag][Beschaffungsantrag]]
+   * [[%WEB%.Verbesserungsvorschlag][Verbesserungsvorschlag]]
+
+%META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="off"}%

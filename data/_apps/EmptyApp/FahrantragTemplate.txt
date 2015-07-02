@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1312375378" format="1.1" reprev="2" version="3"}%
+<form action="/bin/save/WorkflowManagement/FahrantragAUTOINC000" method="post" name="Fahrantrag">
+
+<input type="hidden" name="formtemplate" value="FahrantragForm"> <input type="hidden" name="templatetopic" value="FahrantragTemplate2"> <input type="hidden" name="action_quietsave" value="1">
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="background-color: rgb(204, 204, 204);"> *Fahrantrag:* </td> <td style="background-color: rgb(204, 204, 204);"> </td> <td style="background-color: rgb(204, 204, 204);"> </td> <td style="background-color: rgb(204, 204, 204);"> </td> </tr> <tr> <td> Antragsteller:</td> <td> <input name="Antragsteller" type="text" value="%WIKINAME%" /></td> <td style="width: 179px;"> Dauer:</td> <td style="width: 43px;"> <input name="Dauer" type="text" /></td> </tr> <tr> <td> Vorgesetzer</td> <td> <input name="Vorgesetzter" type="text" /></td> <td style="width: 179px;"> Kostenstellennr:</td> <td style="width: 43px;"> <input name="Kostenstellennr:" type="text" /></td> </tr> <tr> <td> Datum:</td> <td> <input name="Datum" type="text" /></td> <td style="width: 179px;"> </td> <td style="width: 43px;"> </td> </tr> </tbody> </table> 
+
+<input name="Absenden" type="submit" value="Fahrantrag erstellen" /><input name="Loeschen" type="reset" value="Alle Felder löschen" /> <input name="Abbrechen" type="button" value="Abbrechen" />
+
+</form>

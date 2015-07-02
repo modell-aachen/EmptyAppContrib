@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1352889302" format="1.1" reprev="7" version="7"}%
+---++ States
+%EDITTABLE{""}%
+| *State* | *Allow Edit* | *Allow Fork* | *Message* | *State Group* | *View Template* | *Allow Comment* | *Ist Diskussion* | *Discussion Label* |
+| EINGABE | AllUserGroup | nobody | Bitte füllen Sie Ihren Verbesserungsvorschlag aus | Verbesserungsvorschlag | Entwurf | AllUserGroup | | Draft |
+| UEBERPRUEFUNG | KleinboeltingAnja, WilhelmAlexandra, AllUserGroup | nobody | Verbesserungsvorschlag wird inhatlich geprüft | Verbesserungsvorschlag | Entwurf | KleinboeltingAnja, WilhelmAlexandra, AllUserGroup | | Discussion |
+| BEARBEITET | KleinboeltingAnja, WilhelmAlexandra, AllUserGroup | nobody | Der Verbesserungsvorschlag wurde bearbeitet. | Verbesserungsvorschlag | Entwurf | KleinboeltingAnja, WilhelmAlexandra, AllUserGroup | | Discussion |
+ 
+---++ Transitions
+%EDITTABLE{""}%
+| *State* | *Action* | *Next State* | *Allowed* | *Form* | *Notify* | *Attribute* |
+| EINGABE  | Verbesserungsvorschlag absenden | UEBERPRUEFUNG | AllUserGroup | | KleinboeltingAnja, WilhelmAlexandra, SchwedeSonja |  |
+| UEBERPRUEFUNG | Vorschlag wurde bearbeitet | BEARBEITET  | KleinboeltingAnja, WilhelmAlexandra | | %META{"formfield" name="Antragsteller"}% |  |
+| UEBERPRUEFUNG | Um weitere Erläuterungen bitten | EINGABE  | KleinboeltingAnja, WilhelmAlexandra | | %META{"formfield" name="Antragsteller"}% |  |
+
+   * Local WORKFLOW = 
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Local NOWYSIWYG = 1

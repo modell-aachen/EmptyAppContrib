@@ -1,0 +1,35 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1396961603" format="1.1" reprev="2" version="2"}%
+<br /> <form action="/bin/save/%WEB%/BeschaffungsantragAUTOINC000" method="post" name="Beschaffungsantrag"> <input type="hidden" name="formtemplate" value="BeschaffungsantragForm"> <input type="hidden" name="templatetopic" value="BeschaffungsantragTemplate"> <input type="hidden" name="topicparent" value="Beschaffungsantrag"> <input type="hidden" name="action_quietsave" value="1"> %BUTTON{"Beschaffungsantrag erstellen" type="submit"}%%CLEAR% </form>
+
+---
+
+---+ Meine Beschaffungsanträge
+%TABPANE% 
+ %TAB{"Anträge im Eingabestatus"}% 
+%SEARCH{"META:WORKFLOW.name = 'EINGABE' AND Antragsteller='%WIKINAME%'" web="%WEB%" type="query" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Lieferant* | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Lieferant1_Kontakt) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+ %TAB{"Anträge vor Beschaffungsprüfung"}% 
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.BESCHAFFUNGSPRUEFUNG" web="%WEB%" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Lieferant* | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]] | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Lieferant1_Kontakt) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+%TAB{"Vor Freigabe (Herr Hartmann)"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.WARTENAUF_HERRHARTMANN" web="%WEB%" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * |  *Lieferant* |*Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]] | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) |  $formfield(Lieferant1_Kontakt) |$formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%TAB{"Genehmigte Anträge"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.GENEHMIGT" web="%WEB%" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * |  *Lieferant* |*Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]] | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) |  $formfield(Lieferant1_Kontakt) |$formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%TAB{"Abgelehnte Anträge"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%;META:WORKFLOW{name=.ABGELEHNT" web="%WEB%" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate,Beschaffungsantrag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * |  *Lieferant* |*Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]] | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) |  $formfield(Lieferant1_Kontakt) |$formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%TAB{"Alle Anträge"}%
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%WIKINAME%" web="%WEB%" topic="Beschaffungsantrag*" excludetopic="BeschaffungsantragVerwaltung,BeschaffungsantragTemplate,Beschaffungsantrag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Lieferant* | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]] | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) |  $formfield(Lieferant1_Kontakt) |$formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+%ENDTABPANE% 
+---
+
+%BUTTON{"Beschaffungsanträge verwalten" href="%SCRIPTURL{view}%/WorkflowManagement/BeschaffungsantragVerwaltung"}%%CLEAR%
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1312371170" from="WorkflowManagement.Bedarfsmeldung" to="WorkflowManagement.Beschaffungsantrag"}%
+%META:WORKFLOWHISTORY{value="<br>Forked to [[WorkflowManagement.WorkflowManagement.BedarfsmeldungTalk]] by Main.DstAdmin at 14 Dec 2010 - 11:56"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="nobody"}%
+%META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="off"}%

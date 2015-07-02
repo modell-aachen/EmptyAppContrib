@@ -1,0 +1,128 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="pending" date="1397041197" format="1.1" reprev="1" version="1"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"content"}%%TMPL:END%
+
+%TMPL:DEF{"kvptransitions"}%%TMPL:END%
+
+%TMPL:DEF{"contentfooter"}%
+*Kommentare zum Beschaffungsantrag:*
+%TMPL:P{"metacomments"}%
+%TMPL:P{"metacomments::init"}%
+%TMPL:END%
+
+%TMPL:DEF{"content"}%
+
+%JQREQUIRE{"simplemodal, maskedinput"}%
+
+
+<form action="/bin/save/%WEB%/%TOPIC%?select=2" method="post" name="Bedarfsmeldung" id="Bedarfsmeldung"><input type="hidden" name="action_quietsave" value="1">
+
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffung für Standort:* </td> <td style="width: 444px; text-align: left;">
+
+%RENDERFORDISPLAY{fields="Standort" format="$value"}% 
+</td> <td style="width: 184px; text-align: center;">
+<img alt="" src="%WIKILOGOIMG%" style="width: 150px; height: 100px;" /><span class="modacNoPrint"><br>[[Zentrale.ChecklisteBeschaffungKategorie][...hier geht es zur Anleitung]]</span>
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Kosten Zuweisungen bei mehreren Standorten:* </td> <td colspan="2" rowspan="1" style="width: 306px;">
+%RENDERFORDISPLAY{fields="Standort_Zuweisung" format="$value"}%
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffungs Kategorie:* </td> <td colspan="2" rowspan="1" style="width: 306px;">
+
+%RENDERFORDISPLAY{fields="Kategorie" header="<div id=\"Kategorie\">" format="$value" footer="</div>"}% 
+
+   * *Kategorie 0: Abruf aus Rahmenvertrag*
+      * Es existiert ein bestehender Rahmenvertrag
+   * *Kategorie 1: <= 300€ / pro Monat bis zu einem Gesamtvolumen von 1.000€*
+   * *Kategorie 2: da Maximal-Gesamtvolumen in Kategorie 1 erreicht*
+   * *Kategorie 2: 300,01€ - 2.000€*
+   * *Kategorie 3: 2.000,01€ - 20.000,00€ (3 Angebote/ISB)*
+   * *Kategorie 4: 20.000,01€ - 50.000,00€ (Zu Kat. 3 zusätzl. Prüfung Ausschreibung)*
+   * *Kategorie 5: 50.0000,01€ - 100.000,00€ (Zu Kat. 4 zusätzl. Gesellschafterbeschluss)*
+   * *Kategorie 6: > 100.000,00€ (Zu Kat. 5 zusätzl. Ausschreibung)*
+
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Hauptzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Hauptzuordnung" format="$value"}%  <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Unterzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Unterzuordnung" format="$value"}%  <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Kostenzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Kostenzuordnung" format="$value"}%  <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Bennenung der Anschaffung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Benennung" format="$value"}% </td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Nähere Beschreibung / Begründung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Begruendung" format="$value"}% </td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Antragsteller:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Antragsteller" format="$value"}%  </td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Beschaffungs-Datum:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFORDISPLAY{fields="Bestelldatum" format="$value"}%</td> </tr> </tbody> </table> <div id="Kategorie0">
+
+*Kategorie 0 ([[file:///G:\goMedus GmbH & Co.KG\Verwaltung\Verträge GZs - Zentrale\Auflistung GZ-Zentrale Verträge.xls][Rahmenvertrag]]):*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 405px;"> Vertragsdatum Rahmenvertrag:</td> <td style="width: 621px;"> %RENDERFORDISPLAY{fields="Rahmenvertrag_Vertragsdatum" format="$value"}%</td> </tr> <tr> <td style="width: 405px;"> Rahmenvertrag gültig bis:</td> <td style="width: 621px;"> %RENDERFORDISPLAY{fields="Rahmenvertrag_Gueltigkeit" format="$value"}%</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie3">
+
+*Ab Kategorie 3 zusätzlich:*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Einbeziehung Abt. ISB</td> <td style="width: 628px;">
+
+%RENDERFORDISPLAY{fields="ISB" format="$value"}%
+
+Begründung:
+
+%RENDERFORDISPLAY{fields="ISB_Begruendung" format="$value"}%
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie4"> *Ab Kategorie 4 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung unter Einbindung von ISB:</td> <td style="width: 628px;">
+
+%RENDERFORDISPLAY{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" format="$value"}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie5"> *Ab Kategorie 5 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Beschluss durch Gesellschafterversammlung eingeholt?</td> <td style="width: 628px;">
+
+%RENDERFORDISPLAY{fields="Gesellschafterbeschluss" format="$value"}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie6"> *Ab Kategorie 6 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung durchgeführt?</td> <td style="width: 628px;">
+
+%RENDERFORDISPLAY{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" id="Test" format="$value"}%
+
+</td> </tr> </tbody> </table> </div>
+
+*Lieferantenübersicht*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <th> Priorität</th> <th> Kontaktdaten Lieferant</th> <th> Ansprechpartner</th> <th> Preis Brutto / EUR</th> <th> Lieferant bekannt?</th> <th> Argumente PRO / CONTRA</th> </tr> <tr> <td> 1</td> <td>
+%RENDERFORDISPLAY{fields="Lieferant1_Kontakt" format="$value"}%
+</td> <td> %RENDERFORDISPLAY{fields="Lieferant1_Ansprechpartner" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant1_Preis" format="$value"}% </td> <td> %RENDERFORDISPLAY{fields="Lieferant1_Bekannt" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant1_Procontra" format="$value"}%</td> </tr> <tr> <td> 2</td> <td>
+%RENDERFORDISPLAY{fields="Lieferant2_Kontakt" format="$value"}%
+</td> <td> %RENDERFORDISPLAY{fields="Lieferant2_Ansprechpartner" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant2_Preis" format="$value"}% </td> <td> %RENDERFORDISPLAY{fields="Lieferant2_Bekannt" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant2_Procontra" format="$value"}%</td> </tr> <tr> <td> 3</td> <td>
+%RENDERFORDISPLAY{fields="Lieferant3_Kontakt" format="$value"}%
+</td> <td> %RENDERFORDISPLAY{fields="Lieferant3_Ansprechpartner" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant3_Preis" format="$value"}% </td> <td> %RENDERFORDISPLAY{fields="Lieferant3_Bekannt" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant3_Procontra" format="$value"}%</td> </tr> <tr> <td> 4</td> <td>
+%RENDERFORDISPLAY{fields="Lieferant4_Kontakt" format="$value"}%
+</td> <td> %RENDERFORDISPLAY{fields="Lieferant4_Ansprechpartner" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant4_Preis" format="$value"}% </td> <td> %RENDERFORDISPLAY{fields="Lieferant4_Bekannt" format="$value"}%</td> <td> %RENDERFORDISPLAY{fields="Lieferant4_Procontra" format="$value"}%</td> </tr> </tbody> </table> 
+
+---
+
+</form>
+
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="4" style="background-color: rgb(204, 204, 204);"> *Workflow Verwaltung* </td> </tr> <tr> <td style="width: 177px;"> Aktueller Status:</td> <td style="width: 274px;"> %WORKFLOWSTATE%</td> <td style="width: 564px;"> Durchgeführte Aktionen:</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> %WORKFLOWSTATEMESSAGE%</td> <td colspan="1" rowspan="4" style="width: 564px;"> %WORKFLOWHISTORY%</td> </tr> <tr> <td style="width: 177px;"> Bitte immer nacheinander durchführen: </td> <td style="width: 274px;"> 1. Schritt: %CLEAR% %BUTTON{"Beschaffungsantrag bearbeiten" id="BearbeitenButton" href="%SCRIPTURL{edit}%/%WEB%.%TOPIC%"}% %CLEAR% <br/> 2. Schritt (zwingend ein Dokument je Angebot): %CLEAR% %BUTTON{"Dokumente anhängen" href="%SCRIPTURL{attach}%/%WEB%.%TOPIC%"}%%CLEAR% <br/> 3. Schritt: %CLEAR% %WORKFLOWTRANSITION%</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> </tbody> </table> 
+
+<script> 
+
+// Beim Laden 
+$(function() 
+{
+    ausblenden($('div#Kategorie').text());
+});
+
+var ausblenden = function(kategorie) 
+{ 
+$('#Kategorie0').toggle(kategorie == 0); 
+$('#Kategorie3').toggle(kategorie >= 3); 
+$('#Kategorie4').toggle(kategorie >= 4); 
+$('#Kategorie5').toggle(kategorie >= 5); 
+$('#Kategorie6').toggle(kategorie >= 6); 
+};
+</script>
+
+%ADDTOZONE{"script" id="Regex Teil" text="<script type=\"text/javascript\">
+foswiki.workflow = {
+replace: function (inText) {
+        return inText.replace(/<br[^>]*>/g,\"\n\");
+}};
+</script>"}%
+
+%TMPL:END% 
+
+
+
+
+
+
+
+
+%META:PREFERENCE{name="COVER" title="COVER" type="Set" value="metacomment"}%

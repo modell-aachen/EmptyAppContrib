@@ -1,0 +1,25 @@
+%META:TOPICINFO{author="lenicm" comment="save topic" date="1387276018" format="1.1" reprev="27" version="27"}%
+---++ States
+%EDITTABLE{""}%
+| *State* | *Allow Edit* | *Allow Fork* | *Message* | *State Group* | *View Template* | *Allow Comment* | *Ist Diskussion* | *Discussion Label* |
+| EINGABE | AllUserGroup | nobody | Bitte füllen Sie Ihren Beschaffungsantrag aus | Beschaffungsantrag | BeschaffungsantragView | AllUserGroup | | Draft |
+| BESCHAFFUNGSPRUEFUNG | LenicMandy | nobody | Beschaffungsantrag wird inhaltlich geprüft | Beschaffungsantrag | BeschaffungsantragView | LenicMandy | | Discussion |
+| WARTENAUF_HERRHARTMANN | HartmannChristian, LenicMandy | nobody | Freigabe durch GF erforderlich. | Beschaffungsantrag | BeschaffungsantragView | HartmannChristian, LenicMandy | | Draft |
+| GENEHMIGT | HartmannChristian, LenicMandy | nobody | Beschaffungsantrag genehmigt. | Beschaffungsantrag | BeschaffungsantragView | HartmannChristian, LenicMandy | | Discussion |
+| ABGELEHNT | HartmannChristian, LenicMandy | nobody | Beschaffungsantrag abgelehnt. | Beschaffungsantrag | BeschaffungsantragView | HartmannChristian, LenicMandy | | Discussion |
+
+---++ Transitions
+%EDITTABLE{""}%
+| *State* | *Action* | *Next State* | *Allowed* | *Form* | *Notify* | *Condition* | *Attribute* |
+| EINGABE | Beschaffungsantrag absenden | BESCHAFFUNGSPRUEFUNG | AllUserGroup | | LenicMandy | on | |
+| BESCHAFFUNGSPRUEFUNG | Weiterleiten an Herr Hartmann | WARTENAUF_HERRHARTMANN | LenicMandy | | HartmannChristian | on | |
+| BESCHAFFUNGSPRUEFUNG | Um weitere Überarbeitung bitten | EINGABE | LenicMandy | | %META{"formfield" name="Antragsteller"}% | on | |
+| BESCHAFFUNGSPRUEFUNG | Freigabe (unter 300 Euro) | GENEHMIGT | LenicMandy | | %META{"formfield" name="Antragsteller"}% | %IF{"Lieferant1_Preis<300 and Lieferant1_Preis>0" then="on" else="off"}% | |
+| BESCHAFFUNGSPRUEFUNG | Freigabe (Kategorie 0) | GENEHMIGT | LenicMandy | | %META{"formfield" name="Antragsteller"}% | %IF{"Kategorie=0" then="on" else="off"}% | |
+| WARTENAUF_HERRHARTMANN | Freigabe | GENEHMIGT | HartmannChristian | | %META{"formfield" name="Antragsteller"}%, LenicMandy | on | |
+| WARTENAUF_HERRHARTMANN | Beschaffungsantrag ablehnen | ABGELEHNT | HartmannChristian | | %META{"formfield" name="Antragsteller"}% | on | |
+| WARTENAUF_HERRHARTMANN | Um weitere Überarbeitung bitten | EINGABE | HartmannChristian | | %META{"formfield" name="Antragsteller"}% | on | |
+
+   * Local WORKFLOW = 
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Local NOWYSIWYG = 1

@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1292324883" format="1.1" version="1.1"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| Antragsteller | text | | %WIKINAME% | | |
+| Datum | text | | %DATE% | | |
+| Kostenstellennr | text | 50 | | ||
+| Dauer | text | 50 | | ||
+| Vorgesetzter | text | | | ||

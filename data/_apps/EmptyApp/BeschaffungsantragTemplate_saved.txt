@@ -1,0 +1,196 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="" date="1312471502" format="1.1" version="1"}%
+%JQREQUIRE{"simplemodal"}%
+
+<form action="/bin/save/%WEB%/%TOPIC%?select=2" method="post" name="Bedarfsmeldung" id="Bedarfsmeldung"><input type="hidden" name="action_quietsave" value="1">
+
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffung für Standort:* </td> <td style="width: 444px; text-align: left;">
+
+%RENDERFOREDIT{fields="Standort" header=""}%
+</td> <td style="width: 184px; text-align: center;">
+
+<img alt="" src="http://qm-gomedus.gomedus.local/pub/System/ModacSkinTheme/ModacSkinLogos/goMedus_SILBER_877_C.png" style="width: 150px; height: 100px;" />
+[[Zentrale.ChecklisteBeschaffungKategorie][...hier geht es zur Anleitung]]
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffungs Kategorie:* </td> <td colspan="2" rowspan="1" style="width: 306px;">
+
+%RENDERFOREDIT{fields="Kategorie" header=""}%
+
+*Kategorie 0:*
+   * Es existiert ein bestehender Rahmenvertrag
+*Kategorie 1:*
+   * Bestellwert &lt; 300,00€?
+   * persönlicher Gesamtbestellwert im letzten Monat &lt; 1000,00€
+*Kategorie 2:*
+   * 300,01€ &lt; Bestellwert &lt; 2000,00€
+   * persönlicher Gesamtbestellwert im letzten Monat &gt; 1000,00€
+*Kategorie 3:*
+   * 2000,01€ &lt; Bestellwert &lt; 20.000,00€
+*Kategorie 4:*
+   * 20.000,01€ &lt; Bestellwert &lt; 50.000,00€
+*Kategorie 5:*
+   * 50.000,01€ &lt; Bestellwert &lt; 100.000,00€
+*Kategorie 6:*
+   * Bestellwert &gt; 100.000,00€
+
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Hauptzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Hauptzuordnung" header=""}%<a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Unterzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Unterzuordnung" header=""}%<a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Kostenzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Kostenzuordnung" header=""}%<a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Bennenung der Anschaffung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Benennung" header=""}%</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Nähere Beschreibung / Begründung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Begruendung" header=""}%</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Antragsteller:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Antragsteller" header=""}%</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Beschaffungs-Datum:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Bestelldatum" header=""}%</td> </tr> </tbody> </table> <div id="Kategorie0">
+
+*Kategorie 0 (Rahmenvertrag):*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 405px;"> Vertragsdatum Rahmenvertrag:</td> <td style="width: 621px;"> %RENDERFOREDIT{fields="Rahmenvertrag_Vertragsdatum" header=""}%</td> </tr> <tr> <td style="width: 405px;"> Rahmenvertrag gültig bis:</td> <td style="width: 621px;"> %RENDERFOREDIT{fields="Rahmenvertrag_Gueltigkeit" header=""}%</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie3">
+
+*Ab Kategorie 3 zusätzlich:*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Einbeziehung Abt. ISB</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="ISB" header=""}%
+
+Begründung:
+
+%RENDERFOREDIT{fields="ISB_Begruendung" header=""}%
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie4"> *Ab Kategorie 4 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung unter Einbindung von ISB:</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie5"> *Ab Kategorie 5 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Beschluss durch Gesellschafterversammlung eingeholt?</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Gesellschafterbeschluss" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie6"> *Ab Kategorie 6 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung durchgeführt?</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" id="Test" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+*Lieferantenübersicht*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <th> Priorität</th> <th> Kontaktdaten Lieferant</th> <th> Ansprechpartner</th> <th> Preis Brutto / EUR</th> <th> Lieferant bekannt?</th> <th> Argumente PRO / CONTRA</th> </tr> <tr> <td> 1</td> <td>
+%RENDERFOREDIT{fields="Lieferant1_Kontakt" header=""}%
+<a id="Lieferant1_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl'}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant1_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant1_Preis" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant1_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant1_Procontra" header=""}%</td> </tr> <tr> <td> 2</td> <td>
+%RENDERFOREDIT{fields="Lieferant2_Kontakt" header=""}%
+<a id="Lieferant2_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl'}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant2_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant2_Preis" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant2_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant2_Procontra" header=""}%</td> </tr> <tr> <td> 3</td> <td>
+%RENDERFOREDIT{fields="Lieferant3_Kontakt" header=""}%
+<a id="Lieferant3_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl'}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant3_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant3_Preis" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant3_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant3_Procontra" header=""}%</td> </tr> <tr> <td> 4</td> <td>
+%RENDERFOREDIT{fields="Lieferant4_Kontakt" header=""}%
+<a id="Lieferant4_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl'}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant4_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant4_Preis" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant4_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant4_Procontra" header=""}%</td> </tr> </tbody> </table> 
+
+---
+
+%BUTTON{"Beschaffungsantrag abspeichern" type="submit"}% %CLEAR%
+
+__Vor dem anhängen von Dateien Abspeichern nicht vergessen!__
+
+%BUTTON{"Dokumente anhängen" href="%SCRIPTURL{attach}%/%WEB%.%TOPIC%"}%%CLEAR%
+
+</form>
+
+---
+
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="4" style="background-color: rgb(204, 204, 204);"> *Workflow Verwaltung* </td> </tr> <tr> <td style="width: 177px;"> Aktueller Status:</td> <td style="width: 274px;"> %WORKFLOWSTATE%</td> <td style="width: 564px;"> Durchgeführte Aktionen:</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> %WORKFLOWSTATEMESSAGE%</td> <td colspan="1" rowspan="4" style="width: 564px;"> %WORKFLOWHISTORY%</td> </tr> <tr> <td style="width: 177px;"> Aktionen:</td> <td style="width: 274px;"> %WORKFLOWTRANSITION%</td> </tr> <tr> <td style="width: 177px;"> Workflow gestartet durch:</td> <td style="width: 274px;"> </td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> </tbody> </table> 
+
+*Kommentare zum Beschaffungsantrag:*
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td> %COMMENT%</td> </tr> </tbody> </table> 
+
+<script> 
+// Beim verändern 
+
+$('select[name=\'Kategorie\']').livequery('change', function(event) 
+{ 	ausblenden(this.value); 
+	return false; 
+});
+
+$('#Lieferant1_Anlegen').livequery('click', function(event) 
+{
+$('input#auswahl').expire();
+$('input#auswahl').livequery('change', function(event) 
+{
+document.getElementsByName('Lieferant1_Kontakt')[0].value = document.getElementById('auswahl').value;
+return false; 
+});
+});
+
+$('#Lieferant2_Anlegen').livequery('click', function(event) 
+{
+$('input#auswahl').expire();
+$('input#auswahl').livequery('change', function(event) 
+{
+document.getElementsByName('Lieferant2_Kontakt')[0].value = document.getElementById('auswahl').value;
+return false; 
+});
+});
+
+$('#Lieferant3_Anlegen').livequery('click', function(event) 
+{
+$('input#auswahl').expire();
+$('input#auswahl').livequery('change', function(event) 
+{
+document.getElementsByName('Lieferant3_Kontakt')[0].value = document.getElementById('auswahl').value;
+return false; 
+});
+});
+
+$('#Lieferant4_Anlegen').livequery('click', function(event) 
+{
+$('input#auswahl').expire();
+$('input#auswahl').livequery('change', function(event) 
+{
+alert(event);
+document.getElementsByName('Lieferant4_Kontakt')[0].value = document.getElementById('auswahl').value;
+return false; 
+});
+});
+
+// Beim Laden 
+$(document).ready(function(event) 
+{
+	$('select[name=\'Kategorie\']').livequery(function()
+	{ 
+		ausblenden(this.value); 
+	}); 
+});
+
+var ausblenden = function(kategorie) 
+{ 
+$('#Kategorie0').addClass('foswikiHidden'); 
+$('#Kategorie1').addClass('foswikiHidden'); 
+$('#Kategorie2').addClass('foswikiHidden'); 
+$('#Kategorie3').addClass('foswikiHidden'); 
+$('#Kategorie4').addClass('foswikiHidden'); 
+$('#Kategorie5').addClass('foswikiHidden'); 
+$('#Kategorie6').addClass('foswikiHidden'); 
+
+if (kategorie == 0) { 
+	$('#Kategorie0').removeClass('foswikiHidden'); 
+} 
+else if (kategorie == 3) { 
+	$('#Kategorie3').removeClass('foswikiHidden');
+} 
+else if (kategorie == 4) { 
+	$('#Kategorie3').removeClass('foswikiHidden'); 
+	$('#Kategorie4').removeClass('foswikiHidden'); 
+} 
+else if (kategorie == 5) { 
+	$('#Kategorie3').removeClass('foswikiHidden'); 
+	$('#Kategorie4').removeClass('foswikiHidden'); 
+	$('#Kategorie5').removeClass('foswikiHidden'); 
+} 
+else if (kategorie == 6) { 
+	$('#Kategorie3').removeClass('foswikiHidden'); 
+	$('#Kategorie4').removeClass('foswikiHidden'); 
+	$('#Kategorie5').removeClass('foswikiHidden'); 
+	$('#Kategorie6').removeClass('foswikiHidden'); 
+} 
+}; 
+</script>
+
+
+%META:FORM{name="BeschaffungsantragForm"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value="WorkflowManagement.BeschaffungsantragWorkflow"}%
+

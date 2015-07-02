@@ -1,0 +1,47 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="" date="1337333768" format="1.1" version="1"}%
+<div id="modacSidebarIE">
+   * [[Zentrale.WebHome][%MAKETEXT{"Start"}%]]
+   * [[Main.Aktuelles][%MAKETEXT{"Aktuelles"}%]]
+   * [[Main.Anleitung][%MAKETEXT{"Anleitung"}%]]
+   * [[Zentrale.Vorlagen][%MAKETEXT{"Vorlagen"}%]]
+   * [[%BASEWEB%.IndexUebersicht][%MAKETEXT{"Index"}%]]
+</div>
+<div class="modacSidebarTwisty">
+<br>
+   * [[Zentrale.Notfallmanagement][%MAKETEXT{"Notfallmanagement"}%]]
+   * [[Zentrale.GesetzlicheAnforderungen][%MAKETEXT{"Gesetzliche Anforderungen"}%]]
+</div>
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarONE" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Tools"}%" 
+    hidelink="%MAKETEXT{"Tools"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%][%MAKETEXT{"Create New Topic"}%]]
+   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
+%ENDTWISTY% 
+</div>
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarTWO" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Workflows"}%" 
+    hidelink="%MAKETEXT{"Workflows"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+   * [[WorkflowManagement.Beschaffungsantrag][%MAKETEXT{"Beschaffungsantrag"}%]]
+   * [[WorkflowManagement.Verbesserungsvorschlag][%MAKETEXT{"Verbesserungsvorschlag"}%]]
+%ENDTWISTY% 
+</div>

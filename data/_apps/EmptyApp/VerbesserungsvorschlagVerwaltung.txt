@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1314112172" format="1.1" reprev="2" version="2"}%
+---+ Verwaltung von Verbesserungsvorschlägen
+%TABPANE% 
+ %TAB{"Anträge im Eingabestatus"}% 
+%SEARCH{"." topic="Verbesserungsvorschlag*" regex="on" excludetopic="VerbesserungsvorschlagForm,VerbesserungsvorschlagTemplate,VerbesserungsvorschlagTemplate_Saved,VerbesserungsvorschlagWorkflow,VerbesserungsvorschlagVerwaltung%SEARCH{"META:WORKFLOW{name=." web="%WEB%" topic="Verbesserungsvorschlag*" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  format=",$topic" }%" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%SEARCH{"META:WORKFLOW{name=.EINGABE" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+%TAB{"Vorschläge in Prüfung"}% 
+%SEARCH{"META:WORKFLOW{name=.UEBERPRUEFUNG" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+ %TAB{"Geprüfte Vorschläge"}% 
+%SEARCH{"META:WORKFLOW{name=.BEARBEITET" web="%WEB%" topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag,VerbesserungsvorschlagTemplate,VerbesserungsvorschlagTemplate_Saved,VerbesserungsvorschlagForm,VerbesserungsvorschlagWorkflow" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+ %ENDTAB% 
+%TAB{"Alle Vorschläge"}%
+%SEARCH{"." topic="Verbesserungsvorschlag*" excludetopic="VerbesserungsvorschlagVerwaltung,Verbesserungsvorschlag,VerbesserungsvorschlagTemplate,VerbesserungsvorschlagTemplate_Saved,VerbesserungsvorschlagForm,VerbesserungsvorschlagWorkflow" regex="on" nonoise="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Bennenung* | *Hauptzuordnung* | *Standort * | *Bestellwert * | *Kategorie* | *Antragsteller* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $formfield(Benennung) | $formfield(Hauptzuordnung) | $formfield(Standort) | $formfield(Lieferant1_Preis) | $formfield(Kategorie) | $formfield(Antragsteller) | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+%ENDTAB%
+
+%ENDTABPANE% 
+---

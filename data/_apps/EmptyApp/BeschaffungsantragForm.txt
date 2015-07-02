@@ -1,0 +1,43 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1319187288" format="1.1" reprev="9" version="9"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| Antragsteller | text | | %WIKINAME% | | M |
+| Bestelldatum | date | | %DATE% | | |
+| Freigabedatum | date | | | | |
+| Kategorie | select | | 0,1,2,3,4,5,6 | | M |
+| Standort | checkbox+multi | | Zentrale, GZK, GZM, GZD, GZB, Arztnetz | | M |
+| Standort_Zuweisung | textarea | 100x6 | | | |
+| Hauptzuordnung | select | | 1,2,3,4,5,6,7,8,9,10,11,12,13,14 | | M |
+| Unterzuordnung | select | | 1,2,3,4,5 | | M |
+| Kostenzuordnung | select | | A,B,C,D,E | | M |
+| Benennung | textarea | | | | M |
+| Begruendung | textarea | | | | M |
+| ISB | radio | | Ja - durch Besteller, Empfohlen - durch GF, Nein - Begründung | | |
+| ISB_Begruendung | textarea | | | | |
+| Lieferant | text | | | | |
+| SpezielleAnforderungen | textarea | | | | |
+| Rahmenvertrag_Vertragsdatum | date | | | | |
+| Rahmenvertrag_Gueltigkeit | date | | | | |
+| Ausschreibung | select | | nicht durchgeführt, durchgeführt | | |
+| Gesellschafterbeschluss | select | | nicht benötigt, vorhanden | | |
+| Status | text | | | | |
+| Kommentar | textarea | 150x4 | | | |
+| Lieferant1_Kontakt | textarea | | | | |
+| Lieferant1_Ansprechpartner | textarea | 20x4 | | | |
+| Lieferant1_Preis | text | | | | M |
+| Lieferant1_Bekannt | select | | ja, nein | | |
+| Lieferant1_Procontra | textarea | 35x4 | | | |
+| Lieferant2_Kontakt | textarea | | | | |
+| Lieferant2_Ansprechpartner | textarea | 20x4 | | | |
+| Lieferant2_Preis | text | | | | |
+| Lieferant2_Bekannt | select | | ja, nein | | |
+| Lieferant2_Procontra | textarea | 35x4 | | | |
+| Lieferant3_Kontakt | textarea | | | | |
+| Lieferant3_Ansprechpartner | textarea | 20x4 | | | |
+| Lieferant3_Preis | text | | | | |
+| Lieferant3_Bekannt | select | | ja, nein | | |
+| Lieferant3_Procontra | textarea | 35x4 | | | |
+| Lieferant4_Kontakt | textarea | | | | |
+| Lieferant4_Ansprechpartner | textarea | 20x4 | | | |
+| Lieferant4_Preis | text | | | | |
+| Lieferant4_Bekannt | select | | ja, nein | | |
+| Lieferant4_Procontra | textarea | 35x4 | | | |

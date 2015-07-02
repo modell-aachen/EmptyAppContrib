@@ -1,0 +1,55 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="" date="1314102226" format="1.1" version="3"}%
+<form action="/bin/save/%WEB%/%TOPIC%" method="post" name="Verbesserungsvorschlag">
+
+<input type="hidden" name="action_quietsave" value="1">
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="4" style="background-color: rgb(204, 204, 204);"> *Verbesserungsvorschläge / Beschwerden* </td> </tr> <tr> <td> Eingangsdatum:</td> <td style="width: 312px;"> %RENDERFOREDIT{fields="Datum" header=""}%</td> <td style="width: 237px;"> Aus welcher Personengruppe stammt der Vorschlag / die Beschwerde?</td> <td style="width: 288px;">
+
+%RENDERFOREDIT{fields="Kategorie" header=""}%
+</td> </tr> <tr> <td>
+
+Erfasser des Vorschlags:
+</td> <td style="width: 312px;">
+
+%RENDERFOREDIT{fields="Antragsteller" header=""}%
+</td> <td rowspan="2" style="width: 237px;"> Kontaktdaten<br /> (freiwillige Angabe bei Bitte um Rückmeldung)</td> <td rowspan="2" style="width: 288px;">
+
+Name:
+
+%RENDERFOREDIT{fields="Name" header=""}%
+
+Straße und Hausnummer:
+
+%RENDERFOREDIT{fields="Strasse" header=""}%
+
+Postleitzahl und Stadt:
+
+%RENDERFOREDIT{fields="Stadt" header=""}%
+
+Telefonnr.:
+
+%RENDERFOREDIT{fields="Telefonnummer" header=""}%
+
+E-Mail:
+
+%RENDERFOREDIT{fields="Email" header=""}%
+</td> </tr> <tr> <td> Vorschlag betrifft folgenden Standort:</td> <td style="width: 312px;">
+
+%RENDERFOREDIT{fields="Standort" header=""}%
+</td> </tr> <tr> <td> Detaillierte Beschreibung des Vorschlags / der Beschwerde</td> <td colspan="3" rowspan="1">
+
+%RENDERFOREDIT{fields="Kommentar" header=""}%
+</td> </tr> </tbody> </table> 
+
+%BUTTON{"Verbesserungsvorschlag speichern" type="submit"}%%CLEAR%
+
+</form>
+
+---
+
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="4" style="background-color: rgb(204, 204, 204);"> *Workflow Verwaltung* </td> </tr> <tr> <td style="width: 177px;"> Aktueller Status:</td> <td style="width: 274px;"> %WORKFLOWSTATE%</td> <td style="width: 564px;"> Durchgeführte Aktionen:</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> %WORKFLOWSTATEMESSAGE%</td> <td colspan="1" rowspan="4" style="width: 564px;"> %WORKFLOWHISTORY%</td> </tr> <tr> <td style="width: 177px;"> Aktionen:</td> <td style="width: 274px;"> %WORKFLOWTRANSITION%</td> </tr> <tr> <td style="width: 177px;"> Workflow gestartet durch:</td> <td style="width: 274px;"> </td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> </tbody> </table> 
+
+*Kommentare zum Verbesserungsvorschlag:*
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td> %COMMENT%</td> </tr> </tbody> </table>
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value="VerbesserungsvorschlagWorkflow"}%
+%META:PREFERENCE{name="CACHEABLE" title="CACHEABLE" type="Set" value="off"}%

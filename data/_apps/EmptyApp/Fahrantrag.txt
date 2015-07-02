@@ -1,0 +1,27 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1296469210" format="1.1" version="2"}%
+%BUTTON{"Neuer Fahrantrag" target="FahrantragTemplate"}%
+
+<br>
+<br>
+
+%INCLUDE{"%TOPIC%" NAME="%URLPARAM{"name" default="%WIKINAME%"}%"}%
+
+<!--
+<verbatim>
+%STARTINCLUDE%
+<h2>Zu erledigen durch <nop>%NAME%</h2>
+%SEARCH{"META:WORKFLOWNEXTUSER{value=\".*?%NAME%.*?\"" web="%WEB%" topic="Fahrantrag*" regex="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+
+<h2>Von <nop>%NAME% ausgelößte Workflows</h2>
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%NAME%" web="%WEB%" topic="Fahrantrag*" regex="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+
+<h2>Abgeschlossene Workflows von <nop>%NAME%</h2>
+%SEARCH{"META:FIELD{name=.Antragsteller.*?value=.%NAME%;META:WORKFLOW{name=.BESTELLT" web="%WEB%" topic="Fahrantrag*" regex="on" nosearch="on" order="modified" reverse="on"  header="| *Nummer* | *Letzte Änderung* | *Änderung durch* |" format="| [[$web.$topic][$topic]]  | $date | [[%SCRIPTURL{"view"}%/%WEB%/%TOPIC%?name=$wikiname][$wikiname]] |" }%
+</verbatim>
+
+-->
+
+
+
+
+%META:WORKFLOWHISTORY{value="<br>Forked to [[WorkflowManagement.WorkflowManagement.BedarfsmeldungTalk]] by Main.DstAdmin at 14 Dec 2010 - 11:56"}%

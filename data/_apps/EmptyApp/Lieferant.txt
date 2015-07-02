@@ -1,0 +1,37 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1355492406" format="1.1" reprev="7" version="8"}%
+%JQREQUIRE{"simplemodal"}%
+
+%STARTSECTION{"Lieferantenauswahl"}%
+<div class="foswikiFormSteps">
+<h2 class="foswikiDialogTitle">Lieferantensuche:</h2>
+  <div class="foswikiFormStep">
+    <h3>Lieferant auswählen:</h3>
+    <input id="auswahl" class="foswikiInputField" size='42' autocomplete="%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%?section=data&skin=text" />
+    <div class="foswikiFormDescription">
+      Neue Lieferanten müssen in der <a href="%SCRIPTURLPATH{view}%/Zentrale/Lieferantenliste" target="_blank">Lieferantenliste</a> eingetragen werden!
+    </div>
+  </div>
+---
+<div class="foswikiFormStep">
+%BUTTON{"Lieferant übernehmen" icon="tick" class="jqSimpleModalOK" id="uebernehmen"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" class="jqSimpleModalCancel foswikiRight"}%
+%CLEAR%
+</div>
+</div>
+%ENDSECTION{"Lieferantenauswahl"}%
+
+<div class="foswikiHidden">
+%STARTSECTION{"data"}%%SEARCH{ 
+            "^\|[^\|]*\|[^\|]*\| (.*)?%URLPARAM{"term"}%.* \|[^\|]*\|[^\|]*\|[^\|]*\|[^\|]*\|[^\|]*\|[^\|]*\|[^\|]*\|" 
+            web="Zentrale"
+            topic="Lieferantenliste" 
+            type="regex" 
+            multiple="on" 
+            nonoise="on" 
+            header="["
+            format="{\"label\":\"$pattern(^\|[^\|]*\|[^\|]*\| *(.*?) *\|.*)\",\"value\":\"$pattern(^\|[^\|]*\|[^\|]*\| *(.*?) *\|.*)\"}"
+            footer="]"
+            separator=","
+        }%
+%ENDSECTION{"data"}%
+</div>

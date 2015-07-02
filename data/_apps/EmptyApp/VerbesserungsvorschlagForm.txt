@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1314102250" format="1.1" reprev="3" version="5"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| Antragsteller | text | | %WIKINAME% | | |
+| Datum | date | | %DATE% | | |
+| Freigabedatum | date | | | | |
+| Kategorie | select | | -- bitte auswählen, interessierter Arzt, Center Arzt, Netz Arzt, Mitarbeiter, Patient, Lieferant | | |
+| Standort | radio | | Zentrale, GZK, GZM, GZD, GZB, Netz | | |
+| Verbesserungsvorschlag | textarea | 140x4 | | | |
+| Status | text | | | | |
+| Kommentar | textarea | 140x4 | | | |
+| Name | text | | | | |
+| Strasse | text | | | | |
+| Stadt | text | | | | |
+| Telefonnummer | text | | | | |
+| Email | text | | | | |
+
+%META:PREFERENCE{name="CACHEABLE" title="CACHEABLE" type="Set" value="off"}%

@@ -1,0 +1,128 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1366205332" format="1.1" reprev="4" version="4"}%
+%TMPL:INCLUDE{"edit"}%
+
+%TMPL:DEF{"modacMore"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%
+
+%JQREQUIRE{"simplemodal, maskedinput"}%
+
+
+<form action="/bin/save/%WEB%/%TOPIC%?select=2" method="post" name="Bedarfsmeldung" id="Bedarfsmeldung"><input type="hidden" name="action_quietsave" value="1">
+
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffung für Standort:* </td> <td style="width: 444px; text-align: left;">
+
+%RENDERFOREDIT{fields="Standort" header=""}% Pflichtfeld
+</td> <td style="width: 184px; text-align: center;">
+<img alt="" src="/pub/System/ModacSkinTheme/ModacSkinLogos/goMedus_SILBER_877_C.png" style="width: 150px; height: 100px;" /><span class="modacNoPrint"><br>[[Zentrale.ChecklisteBeschaffungKategorie][...hier geht es zur Anleitung]]</span>
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Kosten Zuweisungen bei mehreren Standorten:* </td> <td colspan="2" rowspan="1" style="width: 306px;">
+%RENDERFOREDIT{fields="Standort_Zuweisung" header=""}%
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> *Beschaffungs Kategorie:* </td> <td colspan="2" rowspan="1" style="width: 306px;">
+
+%RENDERFOREDIT{fields="Kategorie" header=""}% Pflichtfeld
+
+   * *Kategorie 0: Abruf aus Rahmenvertrag*
+      * Es existiert ein bestehender Rahmenvertrag
+   * *Kategorie 1: <= 300€ / pro Monat bis zu einem Gesamtvolumen von 1.000€*
+   * *Kategorie 2: da Maximal-Gesamtvolumen in Kategorie 1 erreicht*
+   * *Kategorie 2: 300,01€ - 2.000€*
+   * *Kategorie 3: 2.000,01€ - 20.000,00€ (3 Angebote/ISB)*
+   * *Kategorie 4: 20.000,01€ - 50.000,00€ (Zu Kat. 3 zusätzl. Prüfung Ausschreibung)*
+   * *Kategorie 5: 50.0000,01€ - 100.000,00€ (Zu Kat. 4 zusätzl. Gesellschafterbeschluss)*
+   * *Kategorie 6: > 100.000,00€ (Zu Kat. 5 zusätzl. Ausschreibung)*
+
+</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Hauptzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Hauptzuordnung" header=""}% Pflichtfeld <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Unterzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Unterzuordnung" header=""}% Pflichtfeld <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Kostenzuordnung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Kostenzuordnung" header=""}% Pflichtfeld <a href="%SCRIPTURL{view}%/Zentrale/KategorienzurRechnungsfreigabe" target="_blank">%JQICON{"help" class="modacNoPrint foswikiRight"}%</a></td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Bennenung der Anschaffung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Benennung" header=""}% Pflichtfeld</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 511px;"> Nähere Beschreibung / Begründung</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Begruendung" header=""}% Pflichtfeld</td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Antragsteller:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Antragsteller" header=""}% Pflichtfeld </td> </tr> <tr> <td colspan="2" rowspan="1" style="width: 160px;"> Beschaffungs-Datum:</td> <td colspan="2" rowspan="1" style="width: 306px;"> %RENDERFOREDIT{fields="Bestelldatum" header=""}%</td> </tr> </tbody> </table> <div id="Kategorie0">
+
+*Kategorie 0 ([[file:///G:\goMedus GmbH & Co.KG\Verwaltung\Verträge GZs - Zentrale\Auflistung GZ-Zentrale Verträge.xls][Rahmenvertrag]]):*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 405px;"> Vertragsdatum Rahmenvertrag:</td> <td style="width: 621px;"> %RENDERFOREDIT{fields="Rahmenvertrag_Vertragsdatum" header=""}%</td> </tr> <tr> <td style="width: 405px;"> Rahmenvertrag gültig bis:</td> <td style="width: 621px;"> %RENDERFOREDIT{fields="Rahmenvertrag_Gueltigkeit" header=""}%</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie3">
+
+*Ab Kategorie 3 zusätzlich:*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Einbeziehung Abt. ISB</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="ISB" header=""}%
+
+Begründung:
+
+%RENDERFOREDIT{fields="ISB_Begruendung" header=""}%
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie4"> *Ab Kategorie 4 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung unter Einbindung von ISB:</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie5"> *Ab Kategorie 5 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Beschluss durch Gesellschafterversammlung eingeholt?</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Gesellschafterbeschluss" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+<div id="Kategorie6"> *Ab Kategorie 6 zusätzlich:* <table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td style="width: 406px;"> Ausschreibung durchgeführt?</td> <td style="width: 628px;">
+
+%RENDERFOREDIT{fields="Ausschreibung" Ausschreibung_default="nicht durchgeführt" id="Test" header=""}%
+
+</td> </tr> </tbody> </table> </div>
+
+*Lieferantenübersicht*
+<table border="1" cellpadding="0" cellspacing="0" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <th> Priorität</th> <th> Kontaktdaten Lieferant</th> <th> Ansprechpartner</th> <th> Preis Brutto / EUR</th> <th> Lieferant bekannt?</th> <th> Argumente PRO / CONTRA</th> </tr> <tr> <td> 1</td> <td>
+%RENDERFOREDIT{fields="Lieferant1_Kontakt" header=""}%
+<a id="Lieferant1_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl',onClose:function(dialog){var text = $('input#auswahl').val(); text = foswiki.workflow.replace(text); $('[name=Lieferant1_Kontakt]').val(text); $.modal.close();}}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant1_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant1_Preis" header=""}% Pflichtfeld<br>Dezimalstellen mit "." trennen (200.99)<br>Zahlen ohne € Zeichen eintragen</td> <td> %RENDERFOREDIT{fields="Lieferant1_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant1_Procontra" header=""}%</td> </tr> <tr> <td> 2</td> <td>
+%RENDERFOREDIT{fields="Lieferant2_Kontakt" header=""}%
+<a id="Lieferant2_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl',onClose:function(dialog){var text = $('input#auswahl').val(); text = foswiki.workflow.replace(text); $('[name=Lieferant2_Kontakt]').val(text); $.modal.close();}}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant2_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant2_Preis" header=""}% Dezimalstellen mit "." trennen (200.99)<br>Zahlen ohne € Zeichen eintragen</td> <td> %RENDERFOREDIT{fields="Lieferant2_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant2_Procontra" header=""}%</td> </tr> <tr> <td> 3</td> <td>
+%RENDERFOREDIT{fields="Lieferant3_Kontakt" header=""}%
+<a id="Lieferant3_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl',onClose:function(dialog){var text = $('input#auswahl').val(); text = foswiki.workflow.replace(text); $('[name=Lieferant3_Kontakt]').val(text); $.modal.close();}}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant3_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant3_Preis" header=""}% Dezimalstellen mit "." trennen (200.99)<br>Zahlen ohne € Zeichen eintragen</td> <td> %RENDERFOREDIT{fields="Lieferant3_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant3_Procontra" header=""}%</td> </tr> <tr> <td> 4</td> <td>
+%RENDERFOREDIT{fields="Lieferant4_Kontakt" header=""}%
+<a id="Lieferant4_Anlegen" href="#" class="jqSimpleModal {url:'%SCRIPTURLPATH{"view"}%/%WEB%/Lieferant?skin=text;section=Lieferantenauswahl',onClose:function(dialog){var text = $('input#auswahl').val(); text = foswiki.workflow.replace(text); $('[name=Lieferant4_Kontakt]').val(text); $.modal.close();}}">Lieferant auswählen</a>
+</td> <td> %RENDERFOREDIT{fields="Lieferant4_Ansprechpartner" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant4_Preis" header=""}% Dezimalstellen mit "." trennen (200.99)<br>Zahlen ohne € Zeichen eintragen</td> <td> %RENDERFOREDIT{fields="Lieferant4_Bekannt" header=""}%</td> <td> %RENDERFOREDIT{fields="Lieferant4_Procontra" header=""}%</td> </tr> </tbody> </table> 
+
+---
+<table border="1" cellpadding="1" cellspacing="1" class="Grey_Standard_Ohne" style="width: 90%;"> <tbody> <tr> <td colspan="4" style="background-color: rgb(204, 204, 204);"> *Workflow Verwaltung* </td> </tr> <tr> <td style="width: 177px;"> Aktueller Status:</td> <td style="width: 274px;"> %WORKFLOWSTATE%</td> <td style="width: 564px;"> Durchgeführte Aktionen:</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> %WORKFLOWSTATEMESSAGE%</td> <td colspan="1" rowspan="4" style="width: 564px;"> %WORKFLOWHISTORY%</td> </tr> <tr> <td style="width: 177px;"> Bitte immer nacheinander durchführen: </td> <td style="width: 274px;"> 1. Schritt (zwingend nach jeder Veränderung!): %CLEAR% %BUTTON{"Beschaffungsantrag abspeichern" id="SpeichernButton" type="submit"}% %CLEAR% <br/> 2. Schritt (zwingend ein Dokument je Angebot): %CLEAR% Dokumente anhängen (erst nach dem Abspeichern möglich) %CLEAR% <br/> 3. Schritt: %CLEAR% Beschaffungsantrag absenden (nach dem Bearbeiten)</td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> <tr> <td style="width: 177px;"> </td> <td style="width: 274px;"> </td> </tr> </tbody> </table>
+</form>
+
+ 
+
+
+<script> 
+//$('input[name=\'Lieferant1_Preis\']').mask("9?999999.99");
+//$('input[name=\'Lieferant2_Preis\']').mask("9?999999.99");
+//$('input[name=\'Lieferant3_Preis\']').mask("9?999999.99");
+//$('input[name=\'Lieferant4_Preis\']').mask("9?999999.99");
+
+// Beim verändern 
+
+$('select[name=\'Kategorie\']').change(function() {
+  ausblenden(this.value);
+});
+
+// Beim Laden 
+$(function() {
+
+	ausblenden($('select[name=\'Kategorie\']').val());
+});
+
+
+var ausblenden = function(kategorie) 
+{ 
+$('#Kategorie0').toggle(kategorie == 0); 
+$('#Kategorie3').toggle(kategorie >= 3); 
+$('#Kategorie4').toggle(kategorie >= 4); 
+$('#Kategorie5').toggle(kategorie >= 5); 
+$('#Kategorie6').toggle(kategorie >= 6); 
+};
+</script>
+
+%ADDTOZONE{"script" id="Regex Teil" text="<script type=\"text/javascript\">
+foswiki.workflow = {
+replace: function (inText) {
+        return inText.replace(/<br[^>]*>/g,\"\n\");
+}};
+</script>"}% 
+
+%TMPL:END%
+
